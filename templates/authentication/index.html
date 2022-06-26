@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mass-mail Dispatcher</title>
+</head>
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+
+    <h3>Welcome to Mass-mail Dispatcher!</h3>
+
+
+    {% if user.is_authenticated %}
+    <h3>Hello {{fname}}!</h3>
+    <h4>You're successfully logged in.</h4>
+    <h1>upload csv file</h1>
+    <p>Click on the "Choose File" button to upload a file:</p>
+  
+      <form method="POST" action="/" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <input type="file" name="document" />
+        <button type="submit"><a href="/upload">Upload</a></button>
+        <button type="submit"><a href="/purify">Purify</a></button>
+    </form>
+    <button type="submit"><a href="/signout">SignOut</a></button>
+    {% else %}
+    <button type="submit"><a href="/signup">SignUp</a></button>
+    <br/>
+    <br/>
+    <button type="submit"><a href="/signin">SignIn</a></button>
+    {% endif %}
+     <!-- Features -->
+  <div class="container-fluid">
+    <section class="white-section" id="features">
+ 
+     
+ 
+       <div class="row">
+         <div class="feature-box col-lg-4">
+           <i class="icon fas fa-check-circle fa-4x"></i>
+           <h3 class="feature-title">Easy to use.</h3>
+           <p>So easy to use.</p>
+         </div>
+ 
+         <div class="feature-box col-lg-4">
+           <i class="icon fas fa-bullseye fa-4x"></i>
+           <h3 class="feature-title">Free</h3>
+           <p>Free for everyone.</p>
+         </div>
+ 
+         <div class="feature-box col-lg-4">
+           <i class="icon fas fa-heart fa-4x"></i>
+           <h3 class="feature-title">Guaranteed to work.</h3>
+           <p>Mail sent with high accuracy.</p>
+          </div>
+        </div>
+ 
+      </section>
+    </div>
+   
+ 
+    <footer class="white-section" id="footer">
+        <div class="container-fluid">
+          <i class="social-icon fab fa-facebook-f"></i>
+          <i class="social-icon fab fa-twitter"></i>
+          <i class="social-icon fab fa-instagram"></i>
+          <i class="social-icon fas fa-envelope"></i>
+          <p>© Copyright 2022 MeMd | Created By Mass-Mail Dispatcher Team</p>
+        </div>
+
+      </footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Welcome to MeMD</title>
+  
+</head>
+
+<body>
+    <h1>upload csv file</h1>
+    <p>Click on the "Choose File" button to upload a file:</p>
+
+    
+      <form method="POST" action="/" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <input type="file" value="file">
+        <input type="submit" value="Submit">
+    </form>
+       
+
+</body>
+</html>
