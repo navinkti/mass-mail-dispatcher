@@ -7,7 +7,7 @@
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/Navinkt/mass-mail-dispatcher.git
+git clone https://github.com/navinkti/mass-mail-dispatcher.git
 ```
 
 Install the requirements:
