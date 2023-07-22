@@ -16,7 +16,7 @@ Install the requirements:
 pip install pip
 ```
 
-Apply the migrations:
+Apply the migrations:   
 
 ```bash
 python manage.py migrate
